@@ -8,16 +8,16 @@ body, h1, h2, p {
 
 /* Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f0e68c; /* Light golden background */
     color: #333;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: #343a40;
-    border-bottom: 2px solid #007bff;
+    background-color: #ff6347; /* Tomato */
+    border-bottom: 2px solid #00fa9a; /* Medium Spring Green */
 }
 
 .navbar-brand {
@@ -26,13 +26,13 @@ body {
 }
 
 .navbar-nav .nav-link {
-    color: #fff !important;
+    color: #f0e68c !important; /* Light golden links */
     font-size: 1.1em;
 }
 
 /* Link Hover Effect */
 .navbar-nav .nav-link:hover {
-    color: #007bff !important;
+    color: #00fa9a !important; /* Medium Spring Green on hover */
 }
 
 /* Main Content Area */
@@ -42,7 +42,7 @@ body {
 
 /* Left Column (About Section) */
 .main h2 {
-    color: #007bff;
+    color: #ff4500; /* OrangeRed */
     font-size: 1.8em;
     margin-bottom: 20px;
 }
@@ -51,11 +51,12 @@ body {
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #2e8b57; /* SeaGreen */
 }
 
 /* Right Column (Coming Soon Section) */
 aside h2 {
-    color: #dc3545;
+    color: #4682b4; /* SteelBlue */
     font-size: 1.8em;
     margin-bottom: 20px;
 }
@@ -63,12 +64,13 @@ aside h2 {
 aside p {
     font-size: 1.1em;
     line-height: 1.6;
-}git 
+    color: #d2691e; /* Chocolate */
+}
 
 /* Footer */
 footer {
-    background-color: #343a40;
-    color: rgb(255, 255, 255);
+    background-color: #00ced1; /* DarkTurquoise */
+    color: #ffffff;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -79,13 +81,15 @@ footer {
 /* Additional customizations */
 h1, h2 {
     font-weight: 700;
+    color: #ff69b4; /* HotPink */
 }
 
 a {
     text-decoration: none;
-    color: #007bff;
+    color: #4682b4; /* SteelBlue */
 }
 
 a:hover {
     text-decoration: underline;
+    color: #ff4500; /* OrangeRed */
 }
