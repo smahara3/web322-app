@@ -63,12 +63,12 @@ aside h2 {
 aside p {
     font-size: 1.1em;
     line-height: 1.6;
-}
+}git 
 
 /* Footer */
 footer {
     background-color: #343a40;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 10px;
     position: fixed;
