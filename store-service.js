@@ -56,55 +56,47 @@ function getCategories() {
     });
 }
 
-function addItem(itemData) {
-    return new Promise((resolve, reject) => {
-        // Set 'published' to false if undefined, otherwise set it to true
-        itemData.published = itemData.published !== undefined;
-
-        // Set the 'id' property to be the current length of the items array plus 1
-        itemData.id = items.length + 1;
-
-        // Push the item to the items array
-        items.push(itemData);
-
-        // Resolve with the newly added item
-        resolve(itemData);
-    });
-}
 function getItemsByCategory(category) {
     return new Promise((resolve, reject) => {
         const filteredItems = items.filter(item => item.category === parseInt(category));
         if (filteredItems.length > 0) {
             resolve(filteredItems);
         } else {
-            reject("No items found for the specified category");
+            reject("No results returned");
         }
     });
 }
+
 function getItemsByMinDate(minDateStr) {
     return new Promise((resolve, reject) => {
-        const minDate = new Date(minDateStr);
-        const filteredItems = items.filter(item => new Date(item.postDate) >= minDate);
-        
+        const filteredItems = items.filter(item => new Date(item.postDate) >= new Date(minDateStr));
         if (filteredItems.length > 0) {
             resolve(filteredItems);
         } else {
-            reject("No items found for the specified date or later");
+            reject("No results returned");
         }
     });
 }
+
 function getItemById(id) {
     return new Promise((resolve, reject) => {
         const item = items.find(item => item.id === parseInt(id));
         if (item) {
             resolve(item);
         } else {
-            reject("Item not found");
+            reject("No result returned");
         }
     });
 }
 
-
+function addItem(itemData) {
+    return new Promise((resolve, reject) => {
+        itemData.published = itemData.published !== undefined;
+        itemData.id = items.length + 1;
+        items.push(itemData);
+        resolve(itemData);
+    });
+}
 
 // Combine all exports into a single object
 module.exports = {
@@ -112,8 +104,8 @@ module.exports = {
     getAllItems,
     getPublishedItems,
     getCategories,
-    addItem, 
-    getItemsByCategory,  // Exporting new function
-    getItemsByMinDate,
-    getItemById
+    getItemsByCategory, // Newly added function
+    getItemsByMinDate,   // Newly added function
+    getItemById,         // Newly added function
+    addItem
 };
