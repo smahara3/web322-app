@@ -155,3 +155,14 @@ storeService.initialize()
     .catch((err) => {
         console.error(`Failed to initialize store service: ${err}`);
     });
+    app.get("/item/:value", (req, res) => {
+        const id = req.params.value;
+        storeService.getItemById(id)
+            .then((item) => {
+                res.json(item);
+            })
+            .catch((err) => {
+                res.status(404).json({ message: err });
+            });
+    });
+    

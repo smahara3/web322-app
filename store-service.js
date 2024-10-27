@@ -93,6 +93,17 @@ function getItemsByMinDate(minDateStr) {
         }
     });
 }
+function getItemById(id) {
+    return new Promise((resolve, reject) => {
+        const item = items.find(item => item.id === parseInt(id));
+        if (item) {
+            resolve(item);
+        } else {
+            reject("Item not found");
+        }
+    });
+}
+
 
 
 // Combine all exports into a single object
@@ -103,5 +114,6 @@ module.exports = {
     getCategories,
     addItem, 
     getItemsByCategory,  // Exporting new function
-    getItemsByMinDate 
+    getItemsByMinDate,
+    getItemById
 };
