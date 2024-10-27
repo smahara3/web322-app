@@ -62,3 +62,24 @@ module.exports = {
     getPublishedItems,
     getCategories
 };
+// Assuming items is an array defined at the top of your file
+const item = []; // this array stores all items
+
+function addItem(itemData) {
+    return new Promise((resolve, reject) => {
+        // Set 'published' to false if undefined, otherwise set it to true
+        itemData.published = itemData.published !== undefined;
+
+        // Set the 'id' property to be the current length of the items array plus 1
+        itemData.id = items.length + 1;
+
+        // Push the item to the items array
+        items.push(itemData);
+
+        // Resolve with the newly added item
+        resolve(itemData);
+    });
+}
+
+// Add this function to module.exports
+module.exports = { addItem, /* other exports here */ };

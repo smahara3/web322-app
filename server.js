@@ -26,6 +26,12 @@ const storeService = require("./store-service");
 
 const app = express();
 const port = process.env.PORT || 8080;
+const path = require('path');
+
+app.get('/items/add', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/addItem.html'));
+});
+
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
@@ -85,4 +91,65 @@ storeService.initialize()
     .catch((err) => {
         console.error(`Failed to initialize store service: ${err}`);
     });
-    
+    const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const streamifier = require("streamifier");
+
+// Cloudinary configuration
+cloudinary.config({
+    cloud_name: "dmbnd2du",
+    api_key: "597639321322191",
+    api_secret: "2xkgMLpGverboy8FDSnrEqxM_hg",
+    secure: true
+});
+
+// Initialize multer without disk storage
+const upload = multer();
+
+const { addItem } = require('./store-service'); 
+
+app.post('/items/add', upload.single('featureImage'), (req, res) => {
+    if (req.file) {
+        let streamUpload = (req) => {
+            return new Promise((resolve, reject) => {
+                let stream = cloudinary.uploader.upload_stream(
+                    (error, result) => {
+                        if (result) {
+                            resolve(result);
+                        } else {
+                            reject(error);
+                        }
+                    }
+                );
+                streamifier.createReadStream(req.file.buffer).pipe(stream);
+            });
+        };
+
+        async function upload(req) {
+            let result = await streamUpload(req);
+            console.log(result);
+            return result;
+        }
+
+        upload(req).then((uploaded) => {
+            processItem(uploaded.url);
+        }).catch((error) => {
+            console.error("Error uploading image:", error);
+            res.redirect('/items'); // Handle error by redirecting
+        });
+    } else {
+        processItem("");
+    }
+
+    function processItem(imageUrl) {
+        req.body.featureImage = imageUrl;
+
+        // Use addItem to save the item data
+        addItem(req.body).then((newItem) => {
+            res.redirect('/items'); // Redirect after adding the item
+        }).catch((err) => {
+            console.error("Error adding item:", err);
+            res.redirect('/items');
+        });
+    }
+});
