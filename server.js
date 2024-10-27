@@ -1,7 +1,8 @@
 /*********************************************************************************
 
 WEB322 – Assignment 02
-I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part *  of this assignment has been copied manually or electronically from any other source (including 3rd party web sites) or distributed to other students.
+I declare that this assignment is my own work in accordance with Seneca Academic Policy.  No part 
+of this assignment has been copied manually or electronically from any other source (including 3rd party web sites) or distributed to other students.
 
 Name: Smriti Mahara
 Student ID: 120885231
@@ -9,34 +10,38 @@ Date: 10/09/2024
 Cyclic Web App URL: https://aback-chivalrous-piano.glitch.me/about
 GitHub Repository URL: https://github.com/smahara3/web322-app
 
-********************************************************************************/ 
-
-
-
-
-
-
-
-
-
+********************************************************************************/
 
 const express = require("express");
 const path = require("path");
 const storeService = require("./store-service");
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const streamifier = require("streamifier");
 
 const app = express();
 const port = process.env.PORT || 8080;
-const path = require('path');
 
+// Cloudinary configuration
+cloudinary.config({
+    cloud_name: "dmbnbd2du",
+    api_key: "597639321322191",
+    api_secret: "2xkgMLpGverboy8FDSnrEqxM_hg",
+    secure: true
+});
+
+// Middleware to serve static files
+app.use(express.static('public'));
+
+// Parse incoming JSON data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Define routes
 app.get('/items/add', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/addItem.html'));
 });
 
-
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// Define routes
 app.get("/", (req, res) => {
     res.redirect("/about");
 });
@@ -75,38 +80,8 @@ app.get("/categories", (req, res) => {
         });
 });
 
-// 404 route - This should be the last route
-app.use((req, res) => {
-    res.status(404).send("Page Not Found");
-});
-
-// Initialize the store service and start the server
-storeService.initialize()
-    .then(() => {
-        // Start the server
-        app.listen(port, () => {
-            console.log(`Express http server listening on ${port}`);
-        });
-    })
-    .catch((err) => {
-        console.error(`Failed to initialize store service: ${err}`);
-    });
-    const multer = require("multer");
-const cloudinary = require("cloudinary").v2;
-const streamifier = require("streamifier");
-
-// Cloudinary configuration
-cloudinary.config({
-    cloud_name: "dmbnd2du",
-    api_key: "597639321322191",
-    api_secret: "2xkgMLpGverboy8FDSnrEqxM_hg",
-    secure: true
-});
-
 // Initialize multer without disk storage
 const upload = multer();
-
-const { addItem } = require('./store-service'); 
 
 app.post('/items/add', upload.single('featureImage'), (req, res) => {
     if (req.file) {
@@ -145,7 +120,7 @@ app.post('/items/add', upload.single('featureImage'), (req, res) => {
         req.body.featureImage = imageUrl;
 
         // Use addItem to save the item data
-        addItem(req.body).then((newItem) => {
+        storeService.addItem(req.body).then((newItem) => {
             res.redirect('/items'); // Redirect after adding the item
         }).catch((err) => {
             console.error("Error adding item:", err);
@@ -153,3 +128,19 @@ app.post('/items/add', upload.single('featureImage'), (req, res) => {
         });
     }
 });
+
+// 404 route - This should be the last route
+app.use((req, res) => {
+    res.status(404).send("Page Not Found");
+});
+
+// Initialize the store service and start the server
+storeService.initialize()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Express http server listening on ${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error(`Failed to initialize store service: ${err}`);
+    });

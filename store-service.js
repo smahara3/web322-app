@@ -56,15 +56,6 @@ function getCategories() {
     });
 }
 
-module.exports = {
-    initialize,
-    getAllItems,
-    getPublishedItems,
-    getCategories
-};
-// Assuming items is an array defined at the top of your file
-const item = []; // this array stores all items
-
 function addItem(itemData) {
     return new Promise((resolve, reject) => {
         // Set 'published' to false if undefined, otherwise set it to true
@@ -81,5 +72,11 @@ function addItem(itemData) {
     });
 }
 
-// Add this function to module.exports
-module.exports = { addItem, /* other exports here */ };
+// Combine all exports into a single object
+module.exports = {
+    initialize,
+    getAllItems,
+    getPublishedItems,
+    getCategories,
+    addItem // Add addItem to the exports
+};
