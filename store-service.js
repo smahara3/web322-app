@@ -71,6 +71,29 @@ function addItem(itemData) {
         resolve(itemData);
     });
 }
+function getItemsByCategory(category) {
+    return new Promise((resolve, reject) => {
+        const filteredItems = items.filter(item => item.category === parseInt(category));
+        if (filteredItems.length > 0) {
+            resolve(filteredItems);
+        } else {
+            reject("No items found for the specified category");
+        }
+    });
+}
+function getItemsByMinDate(minDateStr) {
+    return new Promise((resolve, reject) => {
+        const minDate = new Date(minDateStr);
+        const filteredItems = items.filter(item => new Date(item.postDate) >= minDate);
+        
+        if (filteredItems.length > 0) {
+            resolve(filteredItems);
+        } else {
+            reject("No items found for the specified date or later");
+        }
+    });
+}
+
 
 // Combine all exports into a single object
 module.exports = {
@@ -78,5 +101,7 @@ module.exports = {
     getAllItems,
     getPublishedItems,
     getCategories,
-    addItem // Add addItem to the exports
+    addItem, 
+    getItemsByCategory,  // Exporting new function
+    getItemsByMinDate 
 };

@@ -61,13 +61,24 @@ app.get("/shop", (req, res) => {
 });
 
 app.get("/items", (req, res) => {
-    storeService.getAllItems()
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.json({ message: err });
-        });
+    const { category, minDate } = req.query;
+
+    if (category) {
+        
+        storeService.getItemsByCategory(parseInt(category))
+            .then((data) => res.json(data))
+            .catch((err) => res.status(404).json({ message: err }));
+    } else if (minDate) {
+       
+        storeService.getItemsByMinDate(minDate)
+            .then((data) => res.json(data))
+            .catch((err) => res.status(404).json({ message: err }));
+    } else {
+        
+        storeService.getAllItems()
+            .then((data) => res.json(data))
+            .catch((err) => res.status(404).json({ message: err }));
+    }
 });
 
 app.get("/categories", (req, res) => {
