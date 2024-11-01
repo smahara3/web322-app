@@ -7,7 +7,7 @@ of this assignment has been copied manually or electronically from any other sou
 Name: Smriti Mahara
 Student ID: 120885231
 Date: 10/28/2024
-Cyclic Web App URL: https://aback-chivalrous-piano.glitch.me/about
+Cyclic Web App URL: https://mesquite-western-pufferfish.glitch.me/about
 GitHub Repository URL: https://github.com/smahara3/web322-app
 
 ********************************************************************************/

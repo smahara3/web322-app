@@ -1,3 +1,17 @@
+/*********************************************************************************
+
+WEB322 – Assignment 03
+I declare that this assignment is my own work in accordance with Seneca Academic Policy.  No part 
+of this assignment has been copied manually or electronically from any other source (including 3rd party web sites) or distributed to other students.
+
+Name: Smriti Mahara
+Student ID: 120885231
+Date: 10/28/2024
+Cyclic Web App URL: https://mesquite-western-pufferfish.glitch.me/about
+GitHub Repository URL: https://github.com/smahara3/web322-app
+
+********************************************************************************/
+
 const fs = require('fs').promises;
 const path = require('path');
 
