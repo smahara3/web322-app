@@ -37,7 +37,7 @@ body {
 
 /* Main Content Area */
 .container {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 /* Left Column (About Section) */
@@ -92,4 +92,33 @@ a {
 a:hover {
     text-decoration: underline;
     color: #ff4500; /* OrangeRed */
+}
+/* Make active nav link bold */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #ffffff !important; /* Ensure it's visibly different */
+}
+
+/* Navigation Bar Spacing */
+.navbar-nav {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-around; /* Equal spacing between items */
+    align-items: center; /* Vertically center items */
+    width: 100%; /* Spread items across the full width */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove bullet points */
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 20px; /* Adjust the spacing around the links */
+    text-align: center; /* Center the link text */
+    font-size: 1.2em; /* Slightly larger font for visibility */
+}
+
+.navbar {
+    display: flex; /* Flexbox for the navbar */
+    justify-content: space-between; /* Space between brand and nav links */
+    align-items: center; /* Vertically align items */
+    padding: 10px 20px; /* Padding inside the navbar */
 }

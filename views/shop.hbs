@@ -1,0 +1,66 @@
+<div class="row">
+  <section class="main col-md-9">
+    <item>
+      <!-- Check if there is a post to show -->
+      {{#if data.post}}
+        <div class="row">
+          <div class="col-4">
+            <h2>{{data.post.title}}</h2>
+            <img
+              src="{{data.post.featureImage}}"
+              alt="{{data.post.title}}"
+              style="width:100%"
+            />
+          </div>
+
+          <div class="col-8">
+            <br /><br />
+            <div class="row">
+              <div class="col-12">
+        {{{safeHTML data.post.body}}}<!-- Using the #safeHTML helper if needed -->
+                <br /><br />
+                <strong>Price:</strong> ${{data.post.price}}<br />
+                <strong>Category:</strong> {{data.post.category}}<br />
+                <strong>Last Updated:</strong> {{data.post.postDate}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <!-- Show a message if no post is available -->
+        <div class="col-md-12 text-center">
+          <h2>{{data.message}}</h2>
+          <p>Please try another Post / Category</p>
+        </div>
+      {{/if}}
+    </item>
+  </section>
+
+  <aside class="col-md-3">
+    <br /><br />
+    
+    <!-- Items List -->
+    {{#if data.posts}}
+      <h4>Items</h4>
+      <ul class="list-group">
+        {{#each data.posts}}
+          <a href="/shop/{{this.id}}?category={{../data.viewingCategory}}" class="list-group-item">{{this.title}}</a>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+   <!-- Categories List -->
+{{#if data.categories}}
+  {{#if data.categories.length}}
+    <h4>Categories</h4>
+    <ul class="list-group">
+      {{#each data.categories}}
+        <a href="/shop?category={{this.id}}" class="list-group-item">{{this.category}}</a>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No categories available</p>
+  {{/if}}
+{{else}}
+  <p>Failed to load categories</p>
+{{/if}}
