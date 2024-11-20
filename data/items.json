@@ -1,103 +1,102 @@
-
 [
-    {
-       "id":1,
-       "category":1,
-       "postDate":"2023-05-14",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":9.99,
-       "title":"Lawnmower",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":2,
-       "category":1,
-       "postDate":"2023-05-15",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":19.99,
-       "title":"Weber BBQ",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":3,
-       "category":2,
-       "postDate":"2023-05-16",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":439.99,
-       "title":"PS5",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":4,
-       "category":2,
-       "postDate":"2023-05-17",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":459.99,
-       "title":"XBOX",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":5,
-       "category":3,
-       "postDate":"2023-05-18",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":39.99,
-       "title":"TShirt",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":6,
-       "category":3,
-       "postDate":"2023-05-19",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":29.99,
-       "title":"Shorts",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":7,
-       "category":4,
-       "postDate":"2023-05-20",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":19.99,
-       "title":"Baseball",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":8,
-       "category":4,
-       "postDate":"2023-05-21",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":99.99,
-       "title":"Soccer Ball",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":9,
-       "category":5,
-       "postDate":"2023-05-16",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":99.99,
-       "title":"Dog Food",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    },
-    {
-       "id":10,
-       "category":5,
-       "postDate":"2023-05-16",
-       "featureImage":"https://dummyimage.com/200x200/000/fff",
-       "price":9.99,
-       "title":"Fish Food",
-       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis fringilla sem efficitur congue. Vestibulum efficitur blandit ultricies. Sed tempus mollis orci id facilisis. Aliquam placerat, ipsum eget egestas malesuada, neque nunc scelerisque felis, ut egestas turpis augue ut nisi. Curabitur vel convallis augue.",
-       "published":true
-    }
- ] 
+   {
+      "id":1,
+      "category":1,
+      "postDate":"2023-05-14",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":9.99,
+      "title":"Lawnmower",
+      "body":"A versatile lawnmower designed for precision cutting. Compact, easy to maneuver, and built to handle various lawn sizes effortlessly.",
+      "published":true
+   },
+   {
+      "id":2,
+      "category":1,
+      "postDate":"2023-05-15",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":19.99,
+      "title":"Weber BBQ",
+      "body":"A portable Weber BBQ grill that brings smoky flavors to your meals. Perfect for outdoor gatherings and family cookouts.",
+      "published":true
+   },
+   {
+      "id":3,
+      "category":2,
+      "postDate":"2023-05-16",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":439.99,
+      "title":"PS5",
+      "body":"The PS5 redefines gaming with immersive graphics, rapid load speeds, and a lineup of must-play titles for every gamer.",
+      "published":true
+   },
+   {
+      "id":4,
+      "category":2,
+      "postDate":"2023-05-17",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":459.99,
+      "title":"XBOX",
+      "body":"Next-generation gaming awaits with the Xbox Series X. Unleash your potential with enhanced speed, visuals, and gameplay.",
+      "published":true
+   },
+   {
+      "id":5,
+      "category":3,
+      "postDate":"2023-05-18",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":39.99,
+      "title":"TShirt",
+      "body":"A premium-quality T-shirt made with ultra-soft fabric for all-day comfort. Perfect for layering or as a standalone piece.",
+      "published":true
+   },
+   {
+      "id":6,
+      "category":3,
+      "postDate":"2023-05-19",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":29.99,
+      "title":"Shorts",
+      "body":"Lightweight and stylish shorts designed for mobility. Ideal for active days or casual outings during the summer.",
+      "published":true
+   },
+   {
+      "id":7,
+      "category":4,
+      "postDate":"2023-05-20",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":19.99,
+      "title":"Baseball",
+      "body":"A durable baseball built for consistent performance. Perfect for practice sessions or weekend games with friends.",
+      "published":true
+   },
+   {
+      "id":8,
+      "category":4,
+      "postDate":"2023-05-21",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":99.99,
+      "title":"Soccer Ball",
+      "body":"Engineered for precision and durability, this soccer ball is perfect for players looking to improve their skills or enjoy casual games.",
+      "published":true
+   },
+   {
+      "id":9,
+      "category":5,
+      "postDate":"2023-05-16",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":99.99,
+      "title":"Dog Food",
+      "body":"High-protein dog food crafted with premium ingredients to keep your furry friend healthy, active, and satisfied.",
+      "published":true
+   },
+   {
+      "id":10,
+      "category":5,
+      "postDate":"2023-05-16",
+      "featureImage":"https://dummyimage.com/200x200/000/fff",
+      "price":9.99,
+      "title":"Fish Food",
+      "body":"Specialized fish food offering essential nutrients to promote vibrant colors and healthy growth for your aquarium fish.",
+      "published":true
+   }
+]
